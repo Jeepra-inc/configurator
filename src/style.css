@@ -1,0 +1,346 @@
+html,
+body,
+#root
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f3f3f6;
+    font-family: sans-serif;
+}
+h4{
+    margin: 0;
+    margin-bottom: 2px;
+}
+.snapEnv {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 15px;
+    transform: translate3d(0%,-50%,0);
+    transition: transform cubic-bezier(.42,0,.58,1) .45s;
+ }
+ /* .fullscreen .builderModule {
+    width: 100%;
+} */
+
+.builderModule {
+    width: 100vw;
+    height: 100vh;
+}
+.builderModule canvas {
+    transform: translate(-25%, 0);
+    transition: .3s ease;
+}
+.fullscreen canvas {
+    transform: translate(0) scale(1.2);
+}
+.fullscreen .configurator {
+    transform: translate3d(100%, 0, 0);
+}
+
+.fullscreen .snapEnv {
+    transform: translate(-135%, -50%);
+}
+
+    .snapEnv button:first-child {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    
+    .snapEnv button svg {
+        width: 20px;
+        height: 20px;
+        opacity: .7;
+    }
+    .snapEnv button:last-child {
+        border-bottom: 1px solid #c4c4c4 !important;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    .snapEnv button {
+        border-radius: 0;
+        box-shadow: unset;
+        background: #ffffff54;
+        border-bottom: unset !important;
+        padding: 10px;
+        border: 1px solid #c4c4c4;
+        cursor: pointer;
+    }
+    .snapEnv button:hover {
+        background: #eeeeee;
+    }
+
+
+
+
+
+.configTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+}
+.configTitle ,.configvalue {
+    padding: 20px;
+}
+.configIcon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 50px;
+    box-shadow: inset 0 8px 12px rgb(0 0 0 / 25%);
+}
+.pattern .configIcon {
+    border-radius: 5px;
+}
+.item--active .configIcon {
+    border-color: #005049;
+}
+  .check {
+    height: 12px;
+    width: 5px;
+    border-bottom: 3px solid #ffffff;
+    border-right: 3px solid #ffffff;
+    position: absolute;
+    top: 18px;
+    right: 12px;
+    transform: translate(-50%, -50%) rotate(45deg);
+    z-index: 4;
+    display: none;
+    box-shadow: 8px 0px 9px -1px rgb(0 0 0 / 37%);
+  }
+  .item--active .check {
+    display: block;
+  }
+
+.configIcon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    position: relative;
+}
+.configurator {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    color: #000;
+    overflow: scroll;
+    background: #fff;
+    transform: translate3d(0%,0,0);
+    transition: transform cubic-bezier(.42,0,.58,1) .45s;
+    z-index: 1;
+}
+.configSections {
+    border-bottom: 1px solid #eee;
+}
+.ctRight img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    border-radius: 50px;
+}
+
+.ctRight {
+    height: 30px;
+    overflow: hidden;
+}
+/* .builderModule {
+    width: 60%;
+    left: 0;
+    height: 100vh;
+    position: absolute;
+} */
+.configvalue {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.item{
+    cursor: pointer;
+    position: relative;
+}
+button.close {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background: transparent;
+    border: unset;
+    z-index: 0;
+    cursor: pointer;
+    text-align: center;
+    opacity: 0;
+    transition: .1s ease;
+}
+.fullscreen button.close {
+    opacity: 1;
+}
+.item_dot {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    margin: 5px auto ;
+}
+.price{
+    margin-bottom: 2rem;
+}
+
+.configvalue {
+    position: relative;
+}
+
+/* Initially hide all items in the .shaper section */
+.shaper .item {
+    display: none;
+  }
+  
+  /* Display the matched item when it has the .item--active class */
+  .shaper .item.item--active {
+    display: block;
+  }
+
+
+@media only screen and (max-width: 600px) {
+    .configurator {
+        position: relative;
+        width: 100%;
+  }
+  /* .builderModule {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+} */
+html, body, #root {
+    position: relative; }
+}
+
+.ttlHandle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+.totalPrice {
+    background: #f8f8f8;
+    border-top: 1px solid #e8e7e7;
+    position: sticky;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    z-index: 10;
+}
+.cartButton button {
+    text-decoration: unset;
+    text-transform: capitalize;
+    border: 1px solid #eee;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: #f90;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+}
+.selecItem table {
+    padding: 20px;
+    margin: 0;
+    font-size: 14px;
+}
+table tr td:first-child {
+    font-weight: 600;
+}
+/* Table design */
+/* Apply a general style to the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Style for table headers */
+  th {
+    background-color: #e8e7e7;
+    border: 1px solid #e8e7e7;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  /* Style for odd rows */
+  tr:nth-child(even) {
+    background-color: #f8f8f8;
+  }
+  
+  /* Style for table cells */
+  td {
+    border: 1px solid #e8e7e7;
+    padding: 5px 10px 5px 20px;
+  }
+  
+  /* Style for images in cells */
+  td img {
+    max-width: 35px;
+    height: auto;
+    border-radius: 50px;
+  }
+  td:last-child {
+    border-right: unset;
+}
+.selecItem .configTitle {
+    background: #f8f8f8;
+}
+  /* Make the first column (labels) narrower */
+  td:first-child {
+    min-width: 150px;
+    border-left: unset;
+  }
+  .selecItem table tr:last-child td {
+    border-bottom: unset;
+}
+
+.selecItem table tr:first-child td {
+    border-top: unset;
+}
+  /* Add some spacing between the cells */
+  td:not(:first-child) {
+    padding-left: 10px;
+  }
+  
+
+
+  .preloader {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .loaderWrap {
+    width: 100px;
+    height: 5px;
+    border-radius: 50px;
+    overflow: hidden;
+    display: block;
+    background-color: #eee;
+
+  }
+  .loaderBar {
+    background-color: #888;
+    height: 100%;
+    display: block;
+  }
