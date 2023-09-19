@@ -344,3 +344,35 @@ table {
     height: 100%;
     display: block;
   }
+
+
+  /* preview experiment */
+  .neCanvas {
+    position: absolute !important;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    height: 70vh !important;
+}
+
+.roomBase {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.roomBase img {
+    width: 100%;
+    object-fit: cover;
+    z-index: 100000;
+    position: relative;
+}
+
+.preview {
+    position: relative;
+    z-index: 1000;
+    display: block;
+    width: 60%;
+    height: 100%;
+}

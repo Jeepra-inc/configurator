@@ -7,6 +7,7 @@ import { CustomizationProvider } from '../../../contexts/Customization'
 import { Line, OrbitControls } from '@react-three/drei'
 import QuickControls from '../../../components/global/QuickControl'
 import { Stage, SoftShadows, Text, Html, useProgress } from '@react-three/drei'
+import Preview from './Preview'
 export default function Presentation() { 
     
   const canvasRef = useRef(null)
@@ -80,10 +81,12 @@ const toggleLineVisibility = () => {
 };
 return (     
 <CustomizationProvider>
+  <Preview />
     <div className={`builder ${isFullScreen ? 'fullscreen' : ''} ${isClosed ? 'closed' : ''}`}>
         <div className='builderModule'>
             <Canvas eventPrefix='client' camera={{ position: [-3, -3, 5], fov: 50 }} gl={{ preserveDrawingBuffer: true }} ref={canvasRef} >
             <Suspense fallback={<Loader />}>
+            
                 <color attach="background" args={['#f3f3f6']} />
                 <Stage intensity={0.3}  shadows={{ type: 'contact', color: '#f3f3f6', colorBlend: 1, opacity: 0.5 }} adjustCamera={1} >
                     <Frame position={[0, 0, 0]}  scale={0.15} receiveShadows={false}/>
