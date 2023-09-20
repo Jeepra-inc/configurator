@@ -79,9 +79,14 @@ const [isLineVisible, setIsLineVisible] = useState(false);
 const toggleLineVisibility = () => {
   setIsLineVisible(!isLineVisible);
 };
+
+const [preview, setPreview] = useState(false);
+const tooglePreview = () => {
+  setPreview(!preview);
+};
 return (     
 <CustomizationProvider>
-  <Preview />
+{preview && ( <Preview preview = {tooglePreview} /> )}
     <div className={`builder ${isFullScreen ? 'fullscreen' : ''} ${isClosed ? 'closed' : ''}`}>
         <div className='builderModule'>
             <Canvas eventPrefix='client' camera={{ position: [-3, -3, 5], fov: 50 }} gl={{ preserveDrawingBuffer: true }} ref={canvasRef} >
@@ -150,6 +155,7 @@ return (
             toggleClose = {toggleClose}
             isClosed = {isClosed}
             lineVisibility = {toggleLineVisibility}
+            preview = {tooglePreview}
         />
 
         
